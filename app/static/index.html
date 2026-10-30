@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ops Coordinator</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Ops Coordinator</h1>
+    <p>Three agents turn a meeting transcript into a reviewed action plan</p>
+  </div>
+  <div class="session">
+    <span class="muted">Session</span>
+    <code id="session-id"></code>
+    <button class="ghost" id="new-session" title="Start a fresh session with no shared runs">New session</button>
+    <button class="ghost danger" id="reset">Reset my runs</button>
+  </div>
+</header>
+
+<div id="banner" class="banner" hidden></div>
+
+<main class="layout">
+  <aside class="side">
+    <section class="card">
+      <h2>New run</h2>
+      <label for="transcript">Meeting transcript</label>
+      <textarea id="transcript" rows="11" spellcheck="false"></textarea>
+      <details>
+        <summary>Company rules (JSON)</summary>
+        <textarea id="rules" rows="12" spellcheck="false"></textarea>
+      </details>
+      <fieldset class="faults">
+        <legend>Simulated faults <span class="tag sim">demo only</span></legend>
+        <label class="check"><input type="checkbox" value="violation:planning"> Slip a rule violation into the first plan</label>
+        <label class="check"><input type="checkbox" value="fail:planning"> Model failure in the Planning Agent</label>
+        <label class="check"><input type="checkbox" value="fail:review"> Model failure in the Review Agent</label>
+        <label class="check"><input type="checkbox" value="fail:intake"> Model failure in the Intake Agent</label>
+      </fieldset>
+      <div class="row">
+        <button id="start" class="primary">Run the three agents</button>
+        <button id="load-sample" class="ghost">Load sample</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Your runs</h2>
+      <ul id="runs" class="runs"></ul>
+    </section>
+  </aside>
+
+  <section id="detail" class="detail">
+    <div class="empty">
+      <h2>No run selected</h2>
+      <p>Start a run with the sample transcript, or pick one from the list.</p>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
