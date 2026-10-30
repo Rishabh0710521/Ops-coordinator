@@ -1,9 +1,5 @@
 # Ops Coordinator
 
-Assignment 02 for the Mudita AI Generalist brief. Three separate LLM agents turn a fictional meeting transcript and a set of company rules into a reviewed action plan. The agents never share a chat history. They only exchange validated, stored messages.
-
-Live URL: add after deploying  
-Demo access: no login. Open the URL, click "Run the three agents". Each browser gets its own session automatically.
 
 ## What it does
 
