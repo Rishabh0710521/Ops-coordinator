@@ -1,6 +1,9 @@
 # Ops Coordinator
 
 
+Live URL: https://ops-coordinator-mcya.onrender.com  
+Demo access: no login. Open the URL, click "Run the three agents". Each browser gets its own session automatically. The service runs on a free plan, so the first load after a quiet period can take up to a minute while it wakes up, and saved runs are cleared whenever it restarts.
+
 ## What it does
 
 1. **Intake Agent** reads the numbered transcript and returns facts (decisions, requirements, constraints) with line references, plus flags for anything missing or conflicting. It is told not to invent owners or deadlines, and the code double-checks that: an owner whose name does not appear in the cited lines, or a deadline whose words do not appear there, is stripped and noted.
